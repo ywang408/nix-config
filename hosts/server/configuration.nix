@@ -33,6 +33,10 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
+  # The Mac's terminal is Ghostty (TERM=xterm-ghostty); ship every terminal's
+  # terminfo so ssh sessions don't spew "can't find terminal definition".
+  environment.enableAllTerminfo = true;
+
   # ---------- User ----------
   users.users.${username} = {
     isNormalUser = true;
