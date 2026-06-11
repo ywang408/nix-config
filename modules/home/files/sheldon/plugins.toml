@@ -1,0 +1,29 @@
+shell = "zsh"
+
+# --- Core UX ---
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
+
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
+
+# --- Git ---
+[plugins.omz-git-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = ["git.zsh"]
+
+[plugins.forgit]
+github = "wfxr/forgit"
+
+[plugins.git-open]
+github = "paulirish/git-open"
