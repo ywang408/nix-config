@@ -18,7 +18,7 @@ Username is `eric` on every host. Git identity: `You Wang` / `youwang.1997@gmail
 - `hosts/wsl/configuration.nix` — NixOS-WSL system config.
 - `hosts/server/{configuration,hardware-configuration}.nix` — bare-metal NixOS (`abs`): GNOME, NVIDIA (Blackwell, open modules), CUDA toolkit, VS Code + Zed, Syncthing, `sshd:10408` (key-only), Tailscale. `hardware-configuration.nix` is the **real** file generated on the box (btrfs subvolumes on one NVMe) — don't regenerate it casually.
 - `modules/darwin/` — `system`, `nix`, `homebrew`, `mac-app-store`, `fonts`.
-- `modules/home/` — `shell`, `git`, `ssh`, `cli`, `dev`, `yazi`, `direnv`, `ghostty` (shared by all hosts; ghostty writes the platform-correct config path — on macOS that's `~/Library/Application Support/com.mitchellh.ghostty/config`, filename exactly `config`).
+- `modules/home/` — `shell`, `git`, `ssh`, `cli`, `dev`, `yazi`, `direnv`, `ghostty` (shared by all hosts; ghostty writes the platform-correct config path — on macOS that's `~/Library/Application Support/com.mitchellh.ghostty/config`; Ghostty 1.3+ also reads an unmanaged sibling `config.ghostty` which *overrides* the managed file on conflicting keys, so never leave one there).
 - `modules/home/files/` — raw dotfiles copied verbatim (e.g. `sheldon/plugins.toml`).
 
 ## Decisions (don't re-litigate without a reason)

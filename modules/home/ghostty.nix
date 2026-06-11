@@ -44,8 +44,9 @@ in
   };
 
   # macOS: the native location is ~/Library/Application Support/com.mitchellh.ghostty/config.
-  # NOTE the filename must be exactly `config` — a `config.ghostty` in that
-  # directory is silently ignored by Ghostty.
+  # NOTE: Ghostty (1.3+) ALSO reads a sibling `config.ghostty` there, and it
+  # OVERRIDES this managed file on conflicting keys (verified empirically with
+  # a font-size probe) — don't leave an unmanaged one lying around.
   home.file."Library/Application Support/com.mitchellh.ghostty/config" =
     lib.mkIf pkgs.stdenv.isDarwin {
       text = ghosttyConfig;
