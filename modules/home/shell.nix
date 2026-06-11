@@ -53,6 +53,12 @@
     '';
   };
 
+  # Cask CLIs (code, claude, codex, …) live in /opt/homebrew/bin. Login shells
+  # pick it up from /etc/paths.d/homebrew via path_helper, but non-login shells
+  # (tmux panes, IDE terminals, nested zsh) miss it — declare it explicitly.
+  # sessionPath APPENDS, so Nix profiles keep winning over leftover brew formulae.
+  home.sessionPath = lib.mkIf pkgs.stdenv.isDarwin [ "/opt/homebrew/bin" ];
+
   # Prompt + plugin manager (fzf and zoxide come from modules/home/cli.nix).
   # zsh-completions provides the completion collection; it's in the profile, so
   # nix-darwin's /etc/zshrc puts it on fpath automatically.

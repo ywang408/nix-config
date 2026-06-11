@@ -118,6 +118,9 @@
     vscode-fhs
     zed-editor
 
+    # Terminal — same as the Mac; config comes from modules/home/ghostty.nix.
+    ghostty
+
     # Terminal editor on the box (was hand-installed pre-flake; keep it).
     neovim
   ];

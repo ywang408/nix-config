@@ -10,6 +10,7 @@
     ./yazi.nix
     ./direnv.nix
     ./ssh.nix
+    ./ghostty.nix
   ];
 
   home.username = username;
