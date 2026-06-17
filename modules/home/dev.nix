@@ -18,8 +18,9 @@
     gnumake
     pkg-config
 
-    # TeX
+    # TeX + scientific publishing
     texliveFull
+    quarto # .qmd/.ipynb -> PDF (via texliveFull) / HTML / reveal.js
   ]
   ++ lib.optionals pkgs.stdenv.isLinux [
     gcc
