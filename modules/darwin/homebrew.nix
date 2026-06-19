@@ -39,6 +39,7 @@
 
       # --- Editor / terminal ---
       "visual-studio-code"
+      "zed"           # used for remote dev over SSH (e.g. into abs)
       "ghostty"
 
       # --- Productivity ---
