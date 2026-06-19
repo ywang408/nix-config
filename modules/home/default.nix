@@ -11,6 +11,7 @@
     ./direnv.nix
     ./ssh.nix
     ./ghostty.nix
+    ./tmux.nix
   ];
 
   home.username = username;
